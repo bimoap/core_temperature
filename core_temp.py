@@ -24,9 +24,11 @@ with st.form("calc_form"):
     with col1:
         t_start = st.number_input("Start Temp (°C)", value=20.0, step=0.5, format="%.1f")
     with col2:
-        r_start = st.number_input("Start Resistance (Ω)", value=1.000, step=0.001, format="%.3f")
+        # Updated to display and increment at 6 decimal places
+        r_start = st.number_input("Start Resistance (Ω)", value=1.000000, step=0.000001, format="%.6f")
     with col3:
-        r_final = st.number_input("Final Resistance (Ω)", value=1.200, step=0.001, format="%.3f")
+        # Updated to display and increment at 6 decimal places
+        r_final = st.number_input("Final Resistance (Ω)", value=1.200000, step=0.000001, format="%.6f")
         
     # The submit button triggers the calculation
     submitted = st.form_submit_button("Calculate Core Temperature")
