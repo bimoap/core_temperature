@@ -18,20 +18,18 @@ st.divider()
 
 # Create a form for the inputs
 with st.form("calc_form"):
-    # Grouping inputs logically into rows
+    # Row 1: Current
+    current = st.number_input("Current (A)", value=100.0, step=1.0, format="%.2f")
+        
+    # Row 2: Voltages
     col1, col2 = st.columns(2)
     with col1:
-        current = st.number_input("Current (A)", value=100.0, step=1.0, format="%.2f")
-    with col2:
-        t_start = st.number_input("Start Temp (°C)", value=20.0, step=0.5, format="%.1f")
-        
-    col3, col4 = st.columns(2)
-    with col3:
-        # Adjusted to 2 decimal places
         v_start = st.number_input("Start Voltage (V)", value=10.00, step=0.01, format="%.2f")
-    with col4:
-        # Adjusted to 2 decimal places
+    with col2:
         v_final = st.number_input("Finish Voltage (V)", value=12.00, step=0.01, format="%.2f")
+        
+    # Row 3: Start Temperature
+    t_start = st.number_input("Start Temp (°C)", value=20.0, step=0.5, format="%.1f")
         
     # The submit button triggers the calculation
     submitted = st.form_submit_button("Calculate Core Temperature")
