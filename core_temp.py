@@ -27,9 +27,11 @@ with st.form("calc_form"):
         
     col3, col4 = st.columns(2)
     with col3:
-        v_start = st.number_input("Start Voltage (V)", value=10.000, step=0.001, format="%.3f")
+        # Adjusted to 2 decimal places
+        v_start = st.number_input("Start Voltage (V)", value=10.00, step=0.01, format="%.2f")
     with col4:
-        v_final = st.number_input("Finish Voltage (V)", value=12.000, step=0.001, format="%.3f")
+        # Adjusted to 2 decimal places
+        v_final = st.number_input("Finish Voltage (V)", value=12.00, step=0.01, format="%.2f")
         
     # The submit button triggers the calculation
     submitted = st.form_submit_button("Calculate Core Temperature")
