@@ -11,7 +11,7 @@ def calculate_core_temperature(t_start: float, r_start: float, r_final: float) -
 
 # Set up the web page layout and title
 st.set_page_config(page_title="Core Temperature Calculator", layout="centered")
-st.title("V/I Core Temperature Calculator")
+st.title("Core Temperature Calculator")
 st.markdown("Enter your current and voltage measurements below to calculate resistance and core temperature.")
 
 # Display the original formula being used for reference
