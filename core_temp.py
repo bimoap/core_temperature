@@ -5,14 +5,18 @@ def calculate_resistance(voltage: float, current: float) -> float:
     return voltage / current
 
 def calculate_core_temperature(t_start: float, r_start: float, r_final: float) -> float:
-    """Calculates the core temperature of an electromagnet coil using the 254.5 constant."""
-    temperature_rise = ((r_final - r_start) / r_start) * 254.5
+    """Calculates the core temperature of an electromagnet coil using the original 0.00393 constant."""
+    temperature_rise = (r_final - r_start) / (0.00393 * r_start)
     return t_start + temperature_rise
 
 # Set up the web page layout and title
-st.set_page_config(page_title="Core Temperature Calculator", layout="centered")
+st.set_page_config(page_title="V/I Core Temperature Calculator", layout="centered")
 st.title("V/I Core Temperature Calculator")
 st.markdown("Enter your current and voltage measurements below to calculate resistance and core temperature.")
+
+# Display the original formula being used for reference
+with st.expander("View Original Calculation Formula"):
+    st.latex(r"T_{core} = T_{start} + \frac{R_{final} - R_{start}}{0.00393 \cdot R_{start}}")
 
 st.divider()
 
