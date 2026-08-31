@@ -23,7 +23,7 @@ st.divider()
 # Create a form for the inputs
 with st.form("calc_form"):
     # Row 1: Current
-    current = st.number_input("Current (A)", value=100.0, step=1.0, format="%.2f")
+    current = st.number_input("Current (A)", value=240.0, step=1.0, format="%.2f")
         
     # Row 2: Voltages
     col1, col2 = st.columns(2)
